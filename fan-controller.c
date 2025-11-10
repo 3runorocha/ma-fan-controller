@@ -26,9 +26,9 @@ void setup() {
   pinMode(fanPin, OUTPUT);
 
   lcd.setCursor(0, 0);
-  lcd.print("Fan Controller PWM");
+  lcd.print("Fan Controller");
   lcd.setCursor(0, 1);
-  lcd.print("Starting");
+  lcd.print("Starting...");
   delay(2000);
   lcd.clear();
 }
@@ -50,7 +50,7 @@ void loop() {
   if (potencia == 0) {
     valorPWM = 0;
   } else {
-    valorPWM = map(potencia, 1, 100, 80, 255);
+    valorPWM = map(potencia, 1, 100, 20, 60);
   }
   analogWrite(fanPin, valorPWM);
   atualizarLCD(temperatura, potencia);
