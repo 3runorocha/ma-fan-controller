@@ -3,7 +3,7 @@
 #include <Adafruit_Sensor.h>
 
 // =================== CONFIGURAÇÕES ===================
-#define DHTPIN 7          // Pino do DHT11 (você pode mudar)
+#define DHTPIN 7          // Pino do DHT11
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -68,7 +68,6 @@ void loop() {
     }
 
     // Mapeamento da temperatura para a potência
-    // Exemplo: de 20°C (0%) até 35°C (100%)
     temperatura = constrain(temperatura, 20, 35);
     potencia = map(temperatura, 20, 35, 0, 100);
 
